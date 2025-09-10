@@ -30,9 +30,11 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0.html#license-text)
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Unless otherwise noted, this entire repository is (c) 2024 by André (waal70). [See github profile](https://github.com/waal70)
+
+Please contact me if you need a commercial license for any of these files
