@@ -32,11 +32,13 @@ These are static variables with lower priority
 
 ## Author Information
 
-waal70 (Andre)
+Unless otherwise noted, this entire repository is (c) 2024 by André (waal70). [See github profile](https://github.com/waal70)
+
+Please contact me if you need a commercial license for any of these files
 
 ### License
 
-GPL
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0.html#license-text)
 
 #### Minimum Ansible Version
 
