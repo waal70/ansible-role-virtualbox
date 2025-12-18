@@ -1,40 +1,52 @@
-Role Name
-=========
+<!-- DOCSIBLE START -->
 
-A brief description of the role goes here.
+# 📃 Role overview
 
-Requirements
-------------
+## waal70.virtualbox
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Description: This role installs Oracle's VirtualBox
 
-Role Variables
---------------
+### Defaults
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+These are static variables with lower priority
 
-Dependencies
-------------
+#### File: defaults/main.yml
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+| Var | Type | Value |
+| -------------- | -------------- | ------------- |
+| [vbox_apt_key_url](defaults/main.yml#L3) | str | `https://www.virtualbox.org/download/oracle_vbox_2016.asc` |
+| [vbox_repo_url](defaults/main.yml#L4) | str | `https://download.virtualbox.org/virtualbox/debian` |
+| [vbox_apt_suite](defaults/main.yml#L7) | str | `trixie` |
+| [vbox_apt_components](defaults/main.yml#L8) | str | `contrib` |
+| [vbox_apt_arch](defaults/main.yml#L10) | str | `{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}` |
+| [vbox_install_version](defaults/main.yml#L12) | str | `7.2` |
 
-Example Playbook
-----------------
+### Tasks
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+#### File: tasks/main.yml
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+| Name | Module | Has Conditions |
+| ---- | ------ | -------------- |
+| Add the VirtualBox apt repository | ansible.builtin.deb822_repository | False |
+| Install required VirtualBox packages | ansible.builtin.apt | False |
 
-License
--------
+## Author Information
 
-[GPLv3](https://www.gnu.org/licenses/gpl-3.0.html#license-text)
+waal70 (Andre)
 
-Author Information
-------------------
+### License
 
-Unless otherwise noted, this entire repository is (c) 2024 by André (waal70). [See github profile](https://github.com/waal70)
+GPL
 
-Please contact me if you need a commercial license for any of these files
+#### Minimum Ansible Version
+
+2.1
+
+#### Platforms
+
+- **Debian**: ['bookworm']
+
+#### Dependencies
+
+No dependencies specified.
+<!-- DOCSIBLE END -->
